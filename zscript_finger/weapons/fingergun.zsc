@@ -1,0 +1,76 @@
+//this file contains the actual weapon itself, and it's ammo.
+
+Class FingerGun : DI_Weapon
+{
+	Default
+	{
+		DI_Weapon.FreshBonus 4;
+		DI_Weapon.BaseDamage 30;
+		DI_Weapon.Recoil 12.0;
+		DI_Weapon.RecoilRecover 0.5;
+		DI_Weapon.RecoilOffset 2.0;
+		DI_Weapon.BaseAccuracy 4;
+		Weapon.Kickback 500;
+		Weapon.SelectionOrder 10000;
+		Weapon.SlotNumber 1;
+		Weapon.SlotPriority 1;
+		Weapon.AmmoUse 1;
+		Weapon.AmmoGive 5;
+		Weapon.AmmoType "FingerGunAmmo";
+		Inventory.Icon "FINGZ0";
+		Inventory.Pickupmessage "Picked up the Finger Gun! (Shoots big bullets, with even bigger recoil.)";
+		Tag "Finger Gun";
+		+EXTREMEDEATH;
+	}
+	
+	States
+	{
+		Ready:
+			FING A 1 DI_WeaponReady(WRF_ALLOWRELOAD);
+			Loop;
+		Deselect:
+			FING A 0 A_Lower;
+			Loop;
+		Select:
+			FING AAA 0 A_Raise;
+			FING A 1 A_Raise;
+			Loop;
+		Fire:
+			FING A 0 DI_FireCheck();
+			FING A 2 BRIGHT 
+			{
+				A_Overlay(-2, "Flash");
+				DI_BasicBullet();
+				A_StartSound("pistpow");
+			}
+			#### # 0 DI_BulletCasing(2);
+			FING B 20;
+			FING A 0 A_Refire;
+			FING AA 1;
+			Goto Ready;
+		Reload:
+			FING A 0 DI_ReloadCheck();
+			FING BBBBBBBBBBBBBBBB 1 A_WeaponOffset(0, 10, WOF_ADD | WOF_INTERPOLATE);
+			#### # 0 A_GiveInventory(invoker.Ammo1.GetClassName(), invoker.Ammo1.MaxAmount);
+			FING BBBBBBBBBBBBBBBB 1 A_WeaponOffset(0, -10, WOF_ADD | WOF_INTERPOLATE);
+			Goto Ready;
+		Flash:
+			#### # 0 A_OverlayOffset(-2, 22.0, -36.0);
+			PIST C 2 BRIGHT DI_MuzzleFlash();
+			#### # 0 DI_ClearFlash();
+			Stop;
+		Spawn:
+			FING Z -1;
+			Stop;
+	}
+}
+
+Class FingerGunAmmo : Ammo
+{
+	//it sure is ammo.
+	Default
+	{
+		Inventory.Amount 5;
+		Inventory.MaxAmount 5;
+	}
+}

@@ -1,0 +1,11 @@
+//Specifies that this is in english, and that this is the default language.
+[enu default]
+
+//The name of the item that appears in the shop.
+SHOPITEM_FINGERGUN = "Finger Gun";
+//The short description that appears in the shop UI. Be mindful of the character limit.
+SHOPDESC_FINGERGUN = "Does big damage, has\neven bigger recoil.";
+//A secondary description that only appears in the Catalogue Menu.
+SHOPDESC2_FINGERGUN = "\cbIt is currently unknown how the hand is able to fire the bullets. X-ray scans have revealed that this is for all intents and purposes, just a regular severed hand.";
+//This is shown at the bottom of the shop UI. Also displays other important info, like whether or not the player already owns this item.
+SHOPTYPE_FINGERGUN = "\cb[Weapon]";
