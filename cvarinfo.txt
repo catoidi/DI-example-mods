@@ -1,0 +1,1 @@
+server cheat bool di_unlock_item_fingergun = false; //unlocked by reaching Swag Level 8.

@@ -1,2 +1,2 @@
 >>Check the README.md for information on how this file works.
-NormalWeapon FingerGun FINGZ 15;
+NormalWeapon FingerGun FINGZ 15 256 di_unlock_item_fingergun;

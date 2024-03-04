@@ -1,0 +1,6 @@
+>>this is for the unlock menu.
+>>Arg #1: Bool CVAR for this unlock. (NOTE: You must also have a .png matching this name in "graphics/unlocks".)
+>>Arg #2: Shop Item tied to the unlock.
+>>Arg #3: Which Category to place the item into. 1 = Weapon, 2 = Passive, 3 = Other.
+>>Arg #4 (Optional): An integer CVAR to display the progress for this item.
+di_unlock_item_fingergun FingerGun 1 di_swaglevel;
