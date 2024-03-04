@@ -1,5 +1,8 @@
 # DI-bonus
-This is an addon file for **DI: Debt is Inevitable**. This repo all of the code related to the weapon, "Finger Gun". This weapon is unlocked via reaching Swag Level 8.
+> [!NOTE]
+> **This requires a copy of "DI: Debt is Inevitable" v0.8.1 or above to run.**
+ 
+This repo all of the code related to the weapon, "Finger Gun". This weapon is unlocked via reaching Swag Level 8.
 
 [DI's Steam page can be found here.](https://store.steampowered.com/app/2318300/DI_Debt_is_Inevitable/)
 
