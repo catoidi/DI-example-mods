@@ -1,2 +1,2 @@
->>This will unlock our weapon at Swag Level 8.
-8 di_unlock_item_fingergun;
+>>This will unlock our weapon at Swag Level 4 or above.
+4 di_unlock_item_fingergun;

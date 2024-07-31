@@ -11,4 +11,4 @@ SHOPDESC2_FINGERGUN = "\cbIt is currently unknown how the hand is able to fire t
 //This is shown at the bottom of the shop UI. Also displays other important info, like whether or not the player already owns this item.
 SHOPTYPE_FINGERGUN = "\cb[Weapon]";
 //This is shown when viewing the locked item in the unlocks menu.
-SHOPLOCK_FINGERGUN = "\cbReach \ctSwag Level 8 \cbto unlock this item.";
+SHOPLOCK_FINGERGUN = "\cbReach \cfSwag Level 4 \cbor higher to unlock this item.";

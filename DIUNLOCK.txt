@@ -3,4 +3,4 @@
 >>Arg #2: Shop Item tied to the unlock.
 >>Arg #3: Which Category to place the item into. 1 = Weapon, 2 = Passive, 3 = Other.
 >>Arg #4 (Optional): An integer CVAR to display the progress for this item.
-di_unlock_item_fingergun FingerGun 1 di_swaglevel 1000008;
+di_unlock_item_fingergun FingerGun 1 di_swaglevel 1000004;
