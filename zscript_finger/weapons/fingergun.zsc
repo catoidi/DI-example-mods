@@ -40,7 +40,7 @@ Class FingerGun : DI_Weapon
 			FING A 2 BRIGHT 
 			{
 				A_Overlay(-2, "Flash");
-				DI_BasicBullet();
+				DI_Shoot();
 				A_StartSound("pistpow");
 			}
 			#### # 0 DI_BulletCasing(2);
