@@ -1,0 +1,10 @@
+//So our new Difficulty Modifiers needs some console variables to work properly.
+
+//The first CVAR we will add is a boolean used for toggling the modifier on or off.
+//Both CVAR's we make here are marked as "server", as they do affect gameplay. Not that this really matters much, as DI is a singleplayer game.
+//This CVAR is also marked as "noarchive", which will prevent this CVAR from being saved to the user's config file. Simply put, when the user closes/reopens the game, this CVAR will be reset to it's default value (false).
+server noarchive bool example_mod_realism = false;
+
+//The second CVAR here is used for controlling whether or not the modifier is currently unlocked.
+//This CVAR is marked with "cheat", which means that the user must enable sv_cheats in the console to change this value manually.
+server cheat bool example_unlock_mod_realism = false;

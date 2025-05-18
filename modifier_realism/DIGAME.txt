@@ -1,0 +1,10 @@
+>>This is a comment.
+>>
+>>This script file gives users access to the New Game Menu, and is needed for us to add our new modifier.
+>>This is the same script file that is used to add new Players or Levels.
+>>First we tell the script that we're adding a new item with the "Add" command.
+>>Next, we say that this is a modifier by listing "Modifer" as the first argument.
+>>Then, we give the name of a boolean CVAR that toggles the modifier's functionality. Or simply put, when this CVAR is enabled, our modifier should do it's thing.
+>>Lastly, this last argument is optional. Here, we can give another boolean CVAR to act as the unlock condition. If this CVAR exists, the player will only be allowed to enable this modifier if this unlock CVAR is set to "true". This is also the name of the modifier's icon in the new game menu. So for the icon to appear correctly, it needs to be named "example_unlock_mod_realism.png" and then placed in the "graphics/unlocks" folder.
+
+Add, Modifier, example_mod_realism, example_unlock_mod_realism;

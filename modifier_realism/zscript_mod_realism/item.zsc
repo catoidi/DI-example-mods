@@ -1,0 +1,45 @@
+//zscript_mod_realism/item.zsc
+
+//Here is the meat and potatoes of this mod, the actual Difficulty Modifier itself.
+//This is the item that's given to the player whenever the modifier is enabled.
+
+//This class is inheriting from the DIPassiveInventory parent class, which contains all the code and functions needed for Passive Items to work. This parent class can also be used for many things that are technically not Passive Items, like Side Quests, or Random Events, or Difficulty Modifiers (aka this item).
+Class ExampleMod_Realism_Item : DIPassiveInventory
+{
+	Default
+	{
+		DIPassiveInventory.DIHidden true; //Prevents this passive item from appearing on the HUD or in the Catalogue Menu.
+		Inventory.MaxAmount 1; //Doesn't make sense to have more than one of this active for this use case.
+	}
+	
+	//Modifies the base accuracy of the player's current weapon. Positive values worsen the accuracy, while negative values make it better.
+	override double GiveAccuracy() 
+	{
+		if (!plr) {return 0.0;} //"plr" in this case refers to the Player that currently owns this item. This pointer is given to every Passive Item. If "plr" does not exist, there is no reason to run this code.
+		
+		//Get the velocity (Vel) of the Player, split into X, Y, and Z.
+        vector3 curvel = plr.Vel;
+		
+		//The velocity values can be negative or positive. If any of these values are negative, I need to make them positive, as these numbers are meant to worsen the Player's accuracy, not improve it.
+        if (curvel.X < 0) {curvel.X *= -1;}
+        if (curvel.Y < 0) {curvel.Y *= -1;}
+        if (curvel.Z < 0) {curvel.Z *= -1;}
+		
+		//Finally, apply the numbers to the player's accuracy.
+        return 0.3 * (curvel.X + curvel.Y + curvel.Z);
+	}
+	
+	//This function allows inventory items to modify incoming damage towards the owner.
+	override void AbsorbDamage(int damage, Name damageType, out int newdamage, Actor inflictor, Actor source, int flags) 
+	{
+		//Very simple stuff here. With this line, the player now takes 3x damage from all sources.
+		newdamage = damage * 3;
+	}
+	
+	//This function allows us to manipulate the player's final score on death.
+	//Since this modifier makes the game significantly more difficult, we will give a +25% bonus to their score.
+	override double MultiplyFinalScore()
+	{
+		return 1.25;
+	}
+}

@@ -1,0 +1,15 @@
+[enu default]
+//Specific lines of text displayed in DI are controlled in here.
+//This system does support translations, but DI currently only uses English in the base game.
+
+//The name of the new Difficulty Modifier that appears in the New Game Menu.
+EXAMPLE_MOD_REALISM = "Realism";
+//The text that appears when attempting to select the Modifier while it is still locked.
+EXAMPLE_UNLOCK_MOD_REALISM = "\ccunlocked by getting a high score of at least \cf5000 \ccpoints in any level.";
+//Short description of the Modifier. Displayed when selecting the modifier in the New Game Menu.
+DIMODDESC_EXAMPLE_MOD_REALISM = "\cbTake 3x damage from enemies.\nGain movement-based inaccuracy.\n\cnIncreases EXP by 25%.";
+
+//The title bar of the unlock popup that appears when this Modifier is unlocked for the first time.
+DIUNLOCKTYPE_EXAMPLE_UNLOCK_MOD_REALISM = "NEW MODIFIER:";
+//The name of the Modifier that appears in the unlock popup.
+DIPOPUP_EXAMPLE_UNLOCK_MOD_REALISM = "Realism";

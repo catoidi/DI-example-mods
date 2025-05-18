@@ -1,0 +1,7 @@
+>>DISCORE.txt
+>>This is used to add item unlocks when the player reaches a specific final score on specific levels.
+>>Arg 1: Level name. Use '*' to allow the use of any level.
+>>Arg 2: Player name. Use '*' to allow the use of any player.
+>>Arg 3: Minimum score. Player must die with at least this much final score (not affected by swag) to unlock the item.
+>>Arg 4: The boolean CVAR tied to the item.
+* * 5000 example_unlock_mod_realism;
