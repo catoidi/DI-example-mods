@@ -1,6 +1,7 @@
-# DI-bonus
+# Example Mod - Weapon - FingerGun
 > [!NOTE]
-> **This requires a copy of "DI: Debt is Inevitable" v0.8.1 or above to run.**
+> **This mod for DI: Debt is Inevitable only works on versions v0.8.1 through v0.10.1, as this weapon was integrated into the main game in v0.11.**
+> **The info contained within this repo can still be useful for new modders.**
  
 This repo all of the code related to the weapon, "Finger Gun". This weapon is unlocked via reaching Swag Level 8.
 
