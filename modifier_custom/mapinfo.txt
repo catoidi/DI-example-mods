@@ -1,0 +1,7 @@
+//Our new EventHandler needs to be parsed into MAPINFO in order to actually load ingame.
+//Here, I am adding the handler into the "GameInfo" section of MAPINFO, which will ensure that the new handler will actually run in every level of the game.
+
+GameInfo
+{
+	AddEventHandlers = "ExampleMod_Custom_Handler"
+}

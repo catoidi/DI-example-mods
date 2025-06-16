@@ -1,0 +1,31 @@
+[enu default]
+
+//The name of the new Difficulty Modifier that appears in the New Game Menu.
+EXAMPLE_MOD_CUSTOM = "Custom";
+//Short description of the Modifier. Displayed when selecting the modifier in the New Game Menu.
+DIMODDESC_EXAMPLE_MOD_CUSTOM = "Enables custom difficulty sliders\nthat the player can tweak to\ntheir choosing.";
+
+//Name of the mod that appears in the Catalogue Menu.
+shopitem_examplemod_custom_item = "Custom Difficulty Modifier";
+//Short description of the mod.
+shopdesc_examplemod_custom_item = "Enables custom difficulty sliders that\nthe player can tweak to their choosing.";
+//Secondary description of the mod, can be much larger than the first description.
+shopdesc2_examplemod_custom_item = "To change the settings, look for the Custom Difficulty submenu in the Gameplay Options.";
+//What type of item this is.
+shoptype_examplemod_custom_item = "\cc[Modifier]";
+
+//Name of the submenu for our custom modifier.
+submenu_examplemod_custom = "Custom Difficulty Options";
+tooltip_submenu_examplemod_custom = "Tweak the settings for the Custom Difficulty Modifier here.";
+menutext_examplemod_custom_damage = "Health/Damage Options:";
+example_mod_custom_damagemult = "Player DMG Mult";
+tooltip_example_mod_custom_damagemult = "Adds a multiplier to the Player's Base DMG. Default is '1.0'.\n\nValues below 0 will reduce the damage. (Cannot go below 10%)\n\nValues above 0 will increase the damage.\n\nDoes not scale with other damage multipliers.";
+example_mod_custom_maxhealth = "Player Max HP";
+tooltip_example_mod_custom_maxhealth = "Multiplies the player's max health. Default is '1'.\n\nModifying the player's health will also scale the HP Debt mechanics accordingly.";
+example_mod_custom_healingpower = "Healing Power";
+tooltip_example_mod_custom_healingpower = "Multiplies the strength of all healing/regeneration items. Default is '1'.\n\nIncreasing this makes healing items heal more.";
+example_mod_custom_regenspeed = "Regen Speed";
+tooltip_example_mod_custom_regenspeed = "Multiplies the delay between each tic of regeneration. Default is '1'.\n\nDecreasing this number will make regeneration faster, and vice versa.";
+menutext_examplemod_custom_level = "Level Alterations:";
+example_mod_custom_multiplyenemies = "Multiply Enemies";
+tooltip_example_mod_custom_multiplyenemies = "Multiplies the number of enemies that spawn. Default is '0'.\n\nDoes nothing when set to 0. Increasing this number increases the enemies.\n\nDoes not support decimals, and cannot go below 0.";

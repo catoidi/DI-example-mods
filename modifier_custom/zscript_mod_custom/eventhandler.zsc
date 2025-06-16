@@ -1,0 +1,20 @@
+//zscript_mod_custom/eventhandler.zsc
+
+Class ExampleMod_Custom_Handler : EventHandler
+{
+	//This function is run anytime an object spawns in the world.
+	override void WorldThingSpawned(WorldEvent e)
+	{
+		//In my case, I am only looking for the Player, so I will check if the thing that spawned (e.Thing) inherits from the DI_PlayerBase (the class used by all custom players in DI).
+		if (e.Thing is "DI_PlayerBase")
+		{
+			//Next we will check if the modifier is enabled or not. Since our modifier uses a server boolean CVAR to specify this, we can simply do this to check for the modifier:
+			if (example_mod_custom)
+			{
+				//Finally, give the modifier Passive Item to the player.
+				//This item is what actually does the gameplay effects of the modifier.
+				e.Thing.GiveInventory("ExampleMod_Custom_Item", 1);
+			}
+		}
+	}
+}

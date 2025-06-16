@@ -1,0 +1,30 @@
+//cvarinfo.txt
+
+server noarchive bool example_mod_custom = false;
+server cheat bool example_mod_unlock_custom = true;
+
+server int example_mod_custom_extracoin = 0;
+server int example_mod_custom_freshbonus = 0;
+server int example_mod_custom_freshcharge = 0;
+server int example_mod_custom_basedamage = 0;
+server float example_mod_custom_damagemult = 1.0;
+server float example_mod_custom_accuracy = 0.0;
+server float example_mod_custom_recoil = 0.0;
+server float example_mod_custom_recoilrecover = 0.0;
+server int example_mod_custom_projectiles = 0;
+server float example_mod_custom_weaponspeed = 0.0;
+server float example_mod_custom_firerate = 0.0;
+server float example_mod_custom_reloadspeed = 0.0;
+server int example_mod_custom_ammouse1 = 0;
+server int example_mod_custom_ammouse2 = 0;
+server int example_mod_custom_maxammo1 = 0;
+server int example_mod_custom_maxammo2 = 0;
+server float example_mod_custom_playerspeed = 0.0;
+server float example_mod_custom_combodrain = 1.0;
+server float example_mod_custom_regenspeed = 1.0;
+server float example_mod_custom_healingpower = 1.0;
+server float example_mod_custom_maxhealth = 1.0;
+server float example_mod_custom_bulletsize = 0.0;
+server int example_mod_custom_multiplyenemies = 1;
+server float example_mod_custom_multiplyprices = 1.0;
+server float example_mod_custom_multiplyswag = 1.0;

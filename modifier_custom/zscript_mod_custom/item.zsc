@@ -1,0 +1,51 @@
+//zscript_mod_custom/item.zsc
+
+Class ExampleMod_Custom_Item : DIPassiveInventory
+{
+	Default
+	{
+		Tag "Custom Difficulty Modifier"; //Name of the item that appears in the Catalogue Menu.
+		Inventory.MaxAmount 1; //Doesn't make sense to have more than one of this active for this use case.
+	}
+	
+	override void AttachToOwner(Actor other)
+	{
+		Super.AttachToOwner(other);
+		other.GiveBody(other.health * (example_mod_custom_maxhealth - 1.0), 9999999);
+	}
+	
+	override int GiveExtraCoin() {return example_mod_custom_extracoin;} //Makes all enemies drop more coins.
+	override int GiveFreshBonus() {return example_mod_custom_freshbonus;} //Increases coin drops from fresh weapon bonus.
+	override int GiveFreshCharge() {return example_mod_custom_freshcharge;} //Makes fresh bonus recharge faster.
+	override int GiveBaseDamage() {return example_mod_custom_basedamage;} //Adds to the current weapon, before multipliers are applied.
+	override double GiveDamageMult() {return example_mod_custom_damagemult - 1.0;} //Multiplies the weapon's base damage.
+	override double GiveAccuracy() {return example_mod_custom_accuracy;} //Lower numbers improve base acccuracy, and vice versa.
+	override double GiveRecoil() {return example_mod_custom_recoil;} //Increases accuracy loss from each attack.
+	override double GiveRecoilRecover() {return example_mod_custom_recoilrecover;} //Allows weapon to recover from recoil faster.
+	override int GiveProjectiles() {return example_mod_custom_projectiles;} //Increases the number of attacks for all hitscan/projectile-based weapons.
+	override double GiveWeaponSpeed() {return example_mod_custom_weaponspeed;} //Lower numbers improve weapon's animation speed at diminishing rates, and vice versa.
+	override double GiveFirerate() {return example_mod_custom_firerate;} //Weapon Speed again, but only while the weapon is being fired.
+	override double GiveReloadSpeed() {return example_mod_custom_reloadspeed;} //Weapon Speed again, but only while the weapon is being reloaded.
+	override int GiveAmmoUse1() {return example_mod_custom_ammouse1;} //Control how much ammo is required to fire the current weapon. Is hard-capped to never exceed the max ammo.
+	override int GiveAmmoUse2() {return example_mod_custom_ammouse2;} //2nd ammo control
+	override int GiveMaxAmmo1() {return example_mod_custom_maxammo1;} //Controls the max primary ammo. Can't go below the minimum ammo requirement for ammo type.
+	override int GiveMaxAmmo2() {return example_mod_custom_maxammo2;} //Same as above, but for secondary ammo.
+	override double GivePlayerSpeed() {return example_mod_custom_playerspeed;} //Adds movement speed to the player. Has a lower cap of 0.1.
+	override double GiveComboDrain() {return example_mod_custom_combodrain;} //Multiplies the speed of the combo drain.
+	override double GiveRegenSpeed() {return example_mod_custom_regenspeed;} //Multiplies the speed of health regeneration.
+	override double GiveHealingPower() {return example_mod_custom_healingpower;} //Multiplies the efficacy of healing/regen items. 
+	override double GiveMaxHealth() {return example_mod_custom_maxhealth;} //Multiplies the player's max health.
+	override double GiveBulletSize() {return example_mod_custom_bulletsize;} //change projectile hitbox size.
+	
+	//Called by thebrain handler's wave code. Handle with care.
+	override uint MultiplyEnemies() {return example_mod_custom_multiplyenemies - 1;} //Multiplies the amount of enemies that can spawn.
+	override uint MultiplySpawnRate() {return example_mod_custom_multiplyenemies - 1;} //Multiplies how quickly enemies will spawn in.
+	override uint MultiplySpawnCap() {return example_mod_custom_multiplyenemies - 1;} //Multiplies the total number of enemies allowed to spawn in at once.
+	
+	
+	//Activated by the DIShop_Base actors. Can increase/decrease base shop prices. Shop prices cannot go below 1.
+	override double MultiplyShopPrices(DIShop_Base shop) {return example_mod_custom_multiplyprices;} //Multiplies the prices of shops. For performance reasons, only called once per wave.
+	
+	//Ran once upon the player dying, to calculate Final Score with.
+	override double MultiplyFinalScore() {return example_mod_custom_multiplyswag;}
+}

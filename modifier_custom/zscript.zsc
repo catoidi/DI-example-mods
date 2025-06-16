@@ -1,0 +1,11 @@
+version "4.14" //The minimum version of GZDOOM needed to run this mod. For our use case, this matches the version of GZDOOM that the latest version of DI uses (v4.14 or above)
+
+//Due to how GZDOOM loads zscript files, it's important to keep all the zscript contents in a folder with it's own unique name, in order to prevent the mod's files from accidentally overwriting important game files.
+
+//I will be using the name "zscript_mod_realism" for this mod.
+
+//This is the event handler that checks whether or not the modifier is enabled, and then gives the modifier item to the player when needed.
+#include "zscript_mod_custom/eventhandler.zsc"
+
+//This is the modifier item itself. This is a Passive Item that is given to the player while the modifier is enabled.
+#include "zscript_mod_custom/item.zsc"
