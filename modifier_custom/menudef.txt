@@ -10,22 +10,23 @@ OptionMenu "ExampleMod_Custom_Menu"
 {
 	class "DITF_TooltipOptionMenu"
 	Title "$submenu_examplemod_custom"
+	StaticText "$subtitle_examplemod_custom", "Brick"
 	StaticText ""
 	StaticText "$menutext_examplemod_custom_damage", "Purple"
 	Slider "$example_mod_custom_damagemult", example_mod_custom_damagemult, 0.1, 10.0, 0.05, 2
 	Tooltip "$tooltip_example_mod_custom_damagemult"
-	TextField "$example_mod_custom_maxhealth", example_mod_custom_maxhealth
+	Slider "$example_mod_custom_maxhealth", example_mod_custom_maxhealth, 0.01, 10.0, 0.01, 2
 	Tooltip "$tooltip_example_mod_custom_maxhealth"
-	TextField "$example_mod_custom_healingpower", example_mod_custom_healingpower
+	Slider "$example_mod_custom_healingpower", example_mod_custom_healingpower, 0.0, 10.0, 0.05, 2
 	Tooltip "$tooltip_example_mod_custom_healingpower"
-	TextField "$example_mod_custom_regenspeed", example_mod_custom_regenspeed
+	Slider "$example_mod_custom_regenspeed", example_mod_custom_regenspeed, 0.05, 10.0, 0.05, 2
 	Tooltip "$tooltip_example_mod_custom_regenspeed"
 	StaticText ""
 	StaticText "$menutext_examplemod_custom_level", "Purple"
-	TextField "$example_mod_custom_multiplyenemies", example_mod_custom_multiplyenemies
+	Slider "$example_mod_custom_multiplyenemies", example_mod_custom_multiplyenemies, 1, 10, 1, 0
 	Tooltip "$tooltip_example_mod_custom_multiplyenemies"
-	TextField "$example_mod_custom_multiplyprices", example_mod_custom_multiplyprices
+	Slider "$example_mod_custom_multiplyprices", example_mod_custom_multiplyprices, 0.1, 10.0, 0.1, 1
 	Tooltip "$tooltip_example_mod_custom_multiplyprices"
-	TextField "$example_mod_custom_multiplyswag", example_mod_custom_multiplyswag
+	Slider "$example_mod_custom_multiplyswag", example_mod_custom_multiplyswag, 0.0, 10.0, 0.05, 2
 	Tooltip "$tooltip_example_mod_custom_multiplyswag"
 }

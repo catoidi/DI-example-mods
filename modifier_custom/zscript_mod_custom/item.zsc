@@ -11,7 +11,7 @@ Class ExampleMod_Custom_Item : DIPassiveInventory
 	override void AttachToOwner(Actor other)
 	{
 		Super.AttachToOwner(other);
-		other.GiveBody(other.health * (example_mod_custom_maxhealth - 1.0), 9999999);
+		other.A_SetHealth(other.health * (example_mod_custom_maxhealth * 1.00001));
 	}
 	
 	override int GiveExtraCoin() {return example_mod_custom_extracoin;} //Makes all enemies drop more coins.
@@ -34,7 +34,7 @@ Class ExampleMod_Custom_Item : DIPassiveInventory
 	override double GiveComboDrain() {return example_mod_custom_combodrain;} //Multiplies the speed of the combo drain.
 	override double GiveRegenSpeed() {return example_mod_custom_regenspeed;} //Multiplies the speed of health regeneration.
 	override double GiveHealingPower() {return example_mod_custom_healingpower;} //Multiplies the efficacy of healing/regen items. 
-	override double GiveMaxHealth() {return example_mod_custom_maxhealth;} //Multiplies the player's max health.
+	override double GiveMaxHealth() {return (example_mod_custom_maxhealth * 1.00001);} //Multiplies the player's max health.
 	override double GiveBulletSize() {return example_mod_custom_bulletsize;} //change projectile hitbox size.
 	
 	//Called by thebrain handler's wave code. Handle with care.
