@@ -45,6 +45,7 @@ Class ExampleMod_Custom_Item : DIPassiveInventory
 	
 	//Activated by the DIShop_Base actors. Can increase/decrease base shop prices. Shop prices cannot go below 1.
 	override double MultiplyShopPrices(DIShop_Base shop) {return example_mod_custom_multiplyprices;} //Multiplies the prices of shops. For performance reasons, only called once per wave.
+	override double MultiplyShopDebt() {return example_mod_custom_multiplydebt;}
 	
 	//Ran once upon the player dying, to calculate Final Score with.
 	override double MultiplyFinalScore() {return example_mod_custom_multiplyswag;}

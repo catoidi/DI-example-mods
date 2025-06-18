@@ -27,4 +27,5 @@ server float example_mod_custom_maxhealth = 1.0;
 server float example_mod_custom_bulletsize = 0.0;
 server int example_mod_custom_multiplyenemies = 1;
 server float example_mod_custom_multiplyprices = 1.0;
+server float example_mod_custom_multiplydebt = 1.0;
 server float example_mod_custom_multiplyswag = 1.0;

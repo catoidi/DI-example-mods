@@ -27,6 +27,8 @@ OptionMenu "ExampleMod_Custom_Menu"
 	Tooltip "$tooltip_example_mod_custom_multiplyenemies"
 	Slider "$example_mod_custom_multiplyprices", example_mod_custom_multiplyprices, 0.1, 10.0, 0.1, 1
 	Tooltip "$tooltip_example_mod_custom_multiplyprices"
+	Slider "$example_mod_custom_multiplydebt", example_mod_custom_multiplydebt, 0.1, 10.0, 0.1, 1
+	Tooltip "$tooltip_example_mod_custom_multiplydebt"
 	Slider "$example_mod_custom_multiplyswag", example_mod_custom_multiplyswag, 0.0, 10.0, 0.05, 2
 	Tooltip "$tooltip_example_mod_custom_multiplyswag"
 }

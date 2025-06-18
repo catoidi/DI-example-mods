@@ -32,5 +32,7 @@ example_mod_custom_multiplyenemies = "Multiply Enemies";
 tooltip_example_mod_custom_multiplyenemies = "Multiplies the number of enemies that spawn. Default is '0'.\n\nDoes nothing when set to 1. Increasing this number increases the enemies.\n\nDoes not support decimals, and cannot go below 0.";
 example_mod_custom_multiplyprices = "Multiply Shop Prices";
 tooltip_example_mod_custom_multiplyprices = "Multiplies the prices of items in the shop. Default is '1.0'.\n\nShop prices cannot go below $1.";
+example_mod_custom_multiplydebt = "Multiply Shop Debt";
+tooltip_example_mod_custom_multiplydebt = "Multiplies how much health is depleted when going into debt. Default is '1.0'.\n\nIncreasing this number makes debt more punishing.\n\nThis value is also influenced by increases to the player's Max HP.";
 example_mod_custom_multiplyswag = "Multiply Swag EXP";
 tooltip_example_mod_custom_multiplyswag = "Multiplies how much Swag EXP the player will gain from future runs. Default is '1.0'.\n\nSetting to 0 will disable all EXP gain.";
