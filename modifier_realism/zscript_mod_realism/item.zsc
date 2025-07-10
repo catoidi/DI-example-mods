@@ -17,16 +17,8 @@ Class ExampleMod_Realism_Item : DIPassiveInventory
 	{
 		if (!plr) {return 0.0;} //"plr" in this case refers to the Player that currently owns this item. This pointer is given to every Passive Item. If "plr" does not exist, there is no reason to run this code.
 		
-		//Get the velocity (Vel) of the Player, split into X, Y, and Z.
-        vector3 curvel = plr.Vel;
-		
-		//The velocity values can be negative or positive. If any of these values are negative, I need to make them positive, as these numbers are meant to worsen the Player's accuracy, not improve it.
-        if (curvel.X < 0) {curvel.X *= -1;}
-        if (curvel.Y < 0) {curvel.Y *= -1;}
-        if (curvel.Z < 0) {curvel.Z *= -1;}
-		
-		//Finally, apply the numbers to the player's accuracy.
-        return 0.3 * (curvel.X + curvel.Y + curvel.Z);
+		//Get the player's relative velocity and apply it to the player's accuracy.
+        return 0.3 * plr.vel.length();
 	}
 	
 	//This function allows inventory items to modify incoming damage towards the owner.
