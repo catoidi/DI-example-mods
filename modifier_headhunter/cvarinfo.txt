@@ -1,0 +1,2 @@
+server noarchive bool di_mod_headhunter = false;
+server cheat bool di_unlock_mod_headhunter = false;

@@ -1,0 +1,32 @@
+Class DI_Headhunter_Handler : EventHandler
+{
+	override void WorldThingSpawned(WorldEvent e)
+	{
+		if (di_mod_headhunter)
+		{
+			if ((e.Thing is "DI_Monster") && (HasHeadshot(e.Thing.GetClassName())))
+			{
+				e.Thing.GiveInventory("DI_HeadHunter_Item", 1);
+				let item = DI_HeadHunter_Item(e.Thing.FindInventory("DI_HeadHunter_Item"));
+				item.handler = self;
+				[item.handler_headbottom, item.handler_headtop] = GetHeadPosition(e.Thing.GetClassName());
+				item.ChangeHeadPosition();
+			}
+		}
+	}
+	
+	bool HasHeadshot(string mon)
+	{
+		return true;
+	}
+
+	bool CanHeadshot(string proj)
+	{
+		return true;
+	}
+	
+	int, int GetHeadPosition(string mon)
+	{
+		return -1, -1;
+	}
+}
