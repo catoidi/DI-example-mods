@@ -1,0 +1,64 @@
+Class DI_NGU_Monster : Inventory
+{
+	DI_Monster mon;
+	
+	int wavenum;
+
+	override void AttachToOwner(Actor other)
+	{
+		Super.AttachToOwner(other);
+		
+		mon = DI_Monster(other);
+		
+		float maxlvl = 1.5;
+		int maxlvl_random = random[dienemy](0, 999);
+		if (maxlvl_random == 0) {maxlvl = 10.0;}
+		else if (maxlvl_random <= 10) {maxlvl = 4.5;}
+		float lvlmult = frandom[dienemy](0.5, maxlvl);
+		wavenum = CallACS("DICheckWave") * lvlmult;
+		string lvlcolor = "\cij";
+		switch(wavenum / 2)
+		{
+			case 0: lvlcolor = "\cj"; break;
+			case 1: lvlcolor = "\cn"; break;
+			case 2: lvlcolor = "\cv"; break;
+			case 3: lvlcolor = "\cd"; break;
+			case 4: lvlcolor = "\cp"; break;
+			case 5: lvlcolor = "\ck"; break;
+			case 6: lvlcolor = "\cf"; break;
+			case 7: lvlcolor = "\ci"; break;
+			case 8: lvlcolor = "\cg"; break;
+			case 9: lvlcolor = "\ca"; break;
+			default: lvlcolor = "\ct"; break;
+		}
+		
+		mon.health *= 1.00 + (wavenum * 0.05);
+		mon.StartHealth = mon.health;
+		mon.speedmult *= 1.0 + (wavenum * 0.025);
+		mon.mass *= 1.0 + (wavenum * 0.05);
+		
+		mon.SetTag(string.format("%s \cu[LVL %s%d\cu]", mon.GetTag(), lvlcolor, wavenum));
+	}
+	
+	override void ModifyDamage(int damage, Name damageType, out int newdamage, bool passive, Actor inflictor, Actor source, int flags)
+	{
+		if ((damage > 0) && (!passive))
+		{
+			newdamage *= 1.0 + (wavenum * 0.05);
+		}
+	}
+}
+
+Class DI_NGU_Player : DIPassiveInventory
+{
+	default
+	{
+		DIPassiveInventory.DIHidden true;
+	}
+
+	override double MultiplyFinalScore()
+	{
+		if (!plr) {return 1.0;}
+		return 1.0 + (0.01 * CallACS("DICheckWave"));
+	}
+}

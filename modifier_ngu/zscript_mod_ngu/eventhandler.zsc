@@ -1,0 +1,17 @@
+Class DI_NGU_Handler : EventHandler
+{
+	override void WorldThingSpawned(WorldEvent e)
+	{
+		if (di_mod_ngu)
+		{
+			if (e.Thing is "DI_Monster")
+			{
+				e.Thing.GiveInventory("DI_NGU_Monster", 1);
+			}
+			if (e.Thing is "DI_PlayerBase")
+			{
+				e.Thing.GiveInventory("DI_NGU_Player", 1);
+			}
+		}
+	}
+}
